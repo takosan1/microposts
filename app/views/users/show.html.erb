@@ -2,3 +2,8 @@
     <%= gravatar_for @user %>
     <%= @user.name %>
 </h1>
+<div class="bg-warning">
+    <p><%= @user.area %></p>
+    <p><%= @user.profile %></p>
+    (<%= link_to "edit" , edit_user_path %>)
+</div>

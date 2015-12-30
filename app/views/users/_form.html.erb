@@ -1,0 +1,22 @@
+<%= form_for(@user) do |f| %>
+    <% if @user.errors.present? %>
+        <div class="alert alert-danger">
+            <%= alert %>
+            <ul>
+                <% @user.errore.full_users.each do |full_users| %>
+                    <li>
+                        <%= full_users %>    
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    
+    AREA:
+    <%= f.text_field :area %>
+    
+    PROFILE:
+    <%= f.text_area :profile %>
+    <%= f.submit "編集", class: " btn btn-primary" %>
+
+<% end %>
