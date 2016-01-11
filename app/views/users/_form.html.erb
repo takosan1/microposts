@@ -3,7 +3,7 @@
         <div class="alert alert-danger">
             <%= alert %>
             <ul>
-                <% @user.errore.full_users.each do |full_users| %>
+                <% @user.error.full_users.each do |full_users| %>
                     <li>
                         <%= full_users %>    
                     </li>
@@ -12,11 +12,29 @@
         </div>
     <% end %>
     
+    <%= render 'shared/error_messages', object: f.object %> <!-- ここを追加 -->
+
+    
+    NAME:
+    <%= f.text_field :name, class: 'form-control' %>
+            
+    EMAILE
+    <%= f.text_field :email, class: 'form-control' %>
+    
+    
     AREA:
-    <%= f.text_field :area %>
+    <%= f.text_field :area, class: 'form-control' %>
     
     PROFILE:
-    <%= f.text_area :profile %>
+    <%= f.text_area :profile, class: 'form-control' %>
+    
+    PASSWORD
+    <%= f.password_field :password, class: 'form-control' %>
+    再入力:
+    <%= f.password_field :passwold_confirmation, class: 'form-control' %>
+
+
+    
     <%= f.submit "編集", class: " btn btn-primary" %>
 
 <% end %>

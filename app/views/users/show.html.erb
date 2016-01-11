@@ -5,5 +5,9 @@
 <div class="bg-warning">
     <p><%= @user.area %></p>
     <p><%= @user.profile %></p>
+    <div>
+    <% if current_user == @user %>
     (<%= link_to "edit" , edit_user_path %>)
+    <% end %>
+    </div>
 </div>

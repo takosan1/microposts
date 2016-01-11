@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
   
   def update
+    redirect_to root_path unless(current_user == @user)
     if @user.update(user_params)
       redirect_to root_path , notice: 'Profile編集しました'
     else
