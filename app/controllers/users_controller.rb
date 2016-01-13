@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update]
-  before_action :collect_user, only: [edit, :update]
+  before_action :collect_user, only: [:edit, :update]
   
   def show
     @user = User.find(params[:id])
-    return redirect_to :root if @user.nil?
   end
   
   def new
