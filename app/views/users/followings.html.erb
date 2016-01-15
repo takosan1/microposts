@@ -1,0 +1,16 @@
+<h1>following(<%= @user.microposts.count %>)</h1>
+
+          <% @users.each do |user| %>
+          <ul>
+            
+            <%= link_to gravatar_for(user, size: 50), user %>
+           
+          
+            <span class="user"><%= link_to user.name, user %></span>
+            <br><br><br>
+          
+         </ul>
+
+          <% end %>
+
+          

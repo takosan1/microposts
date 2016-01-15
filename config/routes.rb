@@ -6,8 +6,19 @@ Rails.application.routes.draw do
   post 'login'   , to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   get 'area' , to: 'users#edit'
+  # get 'followers/:id' ,to: 'users#followers', as: 'followers'
+  # get 'followings/:id' ,to: 'users#followings', as: 'followings'  
   
-  resources :users, except: [:index, :new]
+  
+  resources :users, except: [:index, :new] do # 'users/≠≠≠'
+    member do
+      get 'followers' # '/users/:id/followers'
+      get 'followings'# '/users/:id/followings'
+    end
+  #   collection do # 'users/~~~~~~'
+  #     get 'followers'  # '/users/followers'
+  #   end
+  end
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts
   resources :relationships, only: [:create, :destroy]

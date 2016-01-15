@@ -1,0 +1,10 @@
+<div class="user_avatars">
+          <% @users.each do |user| %>
+          <ul>
+            <%= link_to gravatar_for(user, size: 50), user %>
+            <span class="user"><%= link_to user.name, user %></span>
+            <br><br><br>
+          </ul>
+          <% end %>
+</div>
+         
